@@ -1,0 +1,8 @@
+.main{
+    position: relative;
+    height: calc(100dvh - 70px);
+    top: 70px;
+}
+.darkTheme.main{
+    background-color: #000000da ;
+}

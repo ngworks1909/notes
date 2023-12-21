@@ -4,7 +4,7 @@ export const NoteContext = createContext();
 
 export const NoteContextProvider = ({children}) =>{
     
-    const host = 'https://notebook-jrbok9nj5-nithins-projects-d106c539.vercel.app'
+    const host = 'https://notebook-blue-tau.vercel.app'
     const notesInitial = []
 
     const [notes, setNotes] = useState(notesInitial);

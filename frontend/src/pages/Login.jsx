@@ -16,7 +16,7 @@ export default function Login() {
       e.preventDefault();
       const email = e.target[0].value;
       const password = e.target[1].value;
-      const response = await fetch(`http://localhost:3001/api/auth/login`, {
+      const response = await fetch(`https://notebook-jrbok9nj5-nithins-projects-d106c539.vercel.app/api/auth/login`, {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",

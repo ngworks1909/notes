@@ -17,7 +17,7 @@ export default function Register({setLogin}) {
         const name = e.target[0].value;
         const email = e.target[1].value;
         const password = e.target[2].value;
-        const response = await fetch(`http://localhost:3001/api/auth/createUser`, {
+        const response = await fetch(`https://notebook-jrbok9nj5-nithins-projects-d106c539.vercel.app/api/auth/createUser`, {
         method: "POST",
         headers: {
               "Content-Type": "application/json",

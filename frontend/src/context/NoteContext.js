@@ -51,7 +51,7 @@ export const NoteContextProvider = ({children}) =>{
     }
 
     const editNote =async(id, title, description) =>{
-      const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+      const response = await fetch(`https://notes-six-mu.vercel.app/api/notes/updatenote/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

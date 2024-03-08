@@ -1,8 +1,8 @@
-import React,{ useContext, useState} from 'react'
-import { Link, useNavigate} from 'react-router-dom';
-import '../css/Login.css'
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Alert from '../components/Alert';
 import { AuthContext } from '../context/AuthContext';
+import '../css/Login.css';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -13,6 +13,7 @@ export default function Login() {
 
 
   const handleLogin = async (e) =>{
+      e.preventDefault();
       const email = e.target[0].value;
       const password = e.target[1].value;
       const response = await fetch(`https://notes-six-mu.vercel.app/api/auth/login`, {

@@ -1,6 +1,6 @@
-import React,{useContext, useState} from 'react'
+import React, { useContext, useState } from 'react';
 import { NoteContext } from '../context/NoteContext';
-import '../css/AddNote.css'
+import '../css/AddNote.css';
 
 export default function AddNote() {
     const {addNote} = useContext(NoteContext);
@@ -12,9 +12,9 @@ export default function AddNote() {
         setNoteText(event.target.value);
        }
     }
-    const handleSaveClick=(e)=>{
+    const handleSaveClick=async (e)=>{
         e.preventDefault();
-        addNote(notetitle,noteText);
+        await addNote(notetitle,noteText);
         setNoteText('');
         setNoteTitle('')
     }

@@ -13,7 +13,6 @@ export default function Login() {
 
 
   const handleLogin = async (e) =>{
-      e.preventDefault();
       const email = e.target[0].value;
       const password = e.target[1].value;
       const response = await fetch(`https://notes-six-mu.vercel.app/api/auth/login`, {

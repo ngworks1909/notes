@@ -4,13 +4,12 @@ export const NoteContext = createContext();
 
 export const NoteContextProvider = ({children}) =>{
     
-    const host = 'https://notes-six-mu.vercel.app'
     const notesInitial = []
 
     const [notes, setNotes] = useState(notesInitial);
 
     const getNotes = async() =>{
-      const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+      const response = await fetch(`https://notes-six-mu.vercel.app/api/notes/fetchallnotes`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -24,7 +23,7 @@ export const NoteContextProvider = ({children}) =>{
     }
 
     const addNote = async(title, description) =>{
-      const response = await fetch(`${host}/api/notes/addnote`, {
+      const response = await fetch(`https://notes-six-mu.vercel.app/api/notes/addnote`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +38,7 @@ export const NoteContextProvider = ({children}) =>{
     }
 
     const deleteNote = async(id) =>{
-      const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+      const response = await fetch(`https://notes-six-mu.vercel.app/api/notes/deletenote/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

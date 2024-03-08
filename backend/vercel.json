@@ -1,11 +1,31 @@
 {
     "version": 2,
-    "builds":[{
-        "src": "./index.js",
+    "builds": [
+      {
+        "src": "index.js",
         "use": "@vercel/node"
-    }],
-    "routes":[{
+      },
+      {
+        "src": "middlewares/*.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "routes//*.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/middlewares/(.*)",
+        "dest": "/middlewares/$1"
+      },
+      {
+        "src": "/routes/(.*)",
+        "dest": "/routes/$1"
+      },
+      {
         "src": "/(.*)",
         "dest": "/index.js"
-    }]
-}
+      }
+    ]
+  }

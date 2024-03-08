@@ -9,16 +9,11 @@ connectToMongo();
 const app = express();
 const port = 3001;
 app.use(
-    cors({
-      origin: ["http://localhost:3000","https://ngworks-notes.vercel.app/"],
-      credentials: true,
-    })
-  );
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://ngworks-notes.vercel.app');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));

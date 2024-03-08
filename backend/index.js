@@ -14,6 +14,11 @@ app.use(
       credentials: true,
     })
   );
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://ngworks-notes.vercel.app');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));

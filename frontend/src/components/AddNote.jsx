@@ -26,7 +26,7 @@ export default function AddNote() {
         </div>
         <div className="note-footer display-flex align-center justify-between">
             <small>{charlimit - noteText.length} Remaining</small>
-            <button className={`save cursor-${(notetitle.trim().length < 3 || noteText.trim().length < 5)? 'disabled':'pointer'}`} disabled={notetitle.length < 5 || noteText.length < 5} onClick ={handleSaveClick}>Save</button>
+            <button className={`save cursor-${(notetitle.trim().length < 2 || noteText.trim().length < 5)? 'disabled':'pointer'}`} disabled={notetitle.length < 5 || noteText.length < 5} onClick ={handleSaveClick}>Save</button>
         </div>
       
     </div>
